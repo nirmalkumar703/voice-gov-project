@@ -314,3 +314,24 @@
 .footer {
     background-color: white;
 }
+
+.agent-response {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 70%;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: white;
+    ;
+}
+
+.agent-response h3 {
+    margin-top: 10px;
+    color: white;
+}
+
+.agent-response ul {
+    padding-left: 20px;
+    color: white;
+}
