@@ -314,10 +314,11 @@ micbutton.addEventListener("click", async() => {
 
                 function uploadtocon(text) {
                     let inputcon = document.createElement("div");
-                    inputcon.classList.add("agenttouseoutput", "d-flex", "flex-row");
-                    let p = document.createElement("p");
-                    p.textContent = text;
-                    inputcon.appendChild(p);
+                    inputcon.classList.add("agenttouseoutput", "agent-response");
+                    // messageDiv.classList.add("agent-response");
+
+                    inputcon.innerHTML = text;
+
                     maincontainer.appendChild(inputcon);
                 }
 
@@ -336,9 +337,10 @@ micbutton.addEventListener("click", async() => {
                     if (languagedomain != "en") {
 
                         if (llm_response.answer) {
+                            let answer = marked.parse(llm_response.answer);
 
                             let targettranslateresult = await targetTranslate(
-                                llm_response.answer,
+                                answer,
                                 languagedomain
                             );
 
@@ -356,7 +358,8 @@ micbutton.addEventListener("click", async() => {
                         let agentaudiourl = await speakText(llm_response.answer);
                         console.log("Agent Audio URL in en:", agentaudiourl);
                         waveformappenderaop(agentaudiourl);
-                        uploadtocon(llm_response.answer);
+                        let answer = marked.parse(llm_response.answer);
+                        uploadtocon(answer);
                         console.log("LLM response is in English, no need to translate to target language.")
                     }
                 }
