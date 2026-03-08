@@ -145,7 +145,7 @@
 
 .voiceinputcontainer {
     margin-top: 500px;
-    width: 20%;
+    width: 15%;
     height: 50px;
     margin-bottom: 10px;
     background-color: rgb(60, 86, 232);
@@ -332,6 +332,11 @@
 }
 
 .agent-response ul {
+    padding-left: 20px;
+    color: white;
+}
+
+.agent-response a {
     padding-left: 20px;
     color: white;
 }
