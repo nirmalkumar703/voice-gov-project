@@ -316,7 +316,7 @@
 }
 
 .agent-response {
-    background: #f4f4f4;
+    background: rgb(60, 86, 232);
     padding: 15px;
     border-radius: 10px;
     max-width: 70%;
